@@ -1,0 +1,17 @@
+.footer{
+ position: fixed;
+ bottom:0;
+ display: flex;
+ justify-content: flex-end;
+
+}
+
+i{
+ vertical-align:middle;
+ margin-right: 0.2em;
+}
+
+.footer span{
+ font-size: 1.1em;
+ font-weight: 300;
+}
