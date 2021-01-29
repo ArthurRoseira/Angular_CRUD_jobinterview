@@ -1,0 +1,27 @@
+.navbar{
+ display: flex;
+ justify-content: space-between;
+}
+
+span{
+ vertical-align: middle;
+ padding-left: 0.5rem;
+}
+
+.logo{
+ vertical-align: middle;
+ margin-left:1.5rem;
+ height:60px;
+}
+
+
+a{
+ vertical-align: middle;
+ text-decoration: none;
+ color: aliceblue;
+ margin-bottom: -0.3em;
+}
+
+i{
+ vertical-align: middle;
+}
