@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { HomeComponent } from './views/home/home.component';
 import { MainScreenComponent } from './views/main-screen/main-screen.component';
+import { ListComponent } from './components/clients/list/list.component';
+import { AddComponent } from './components/clients/add/add.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { MainScreenComponent } from './views/main-screen/main-screen.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    MainScreenComponent
+    MainScreenComponent,
+    ListComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
