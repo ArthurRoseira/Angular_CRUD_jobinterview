@@ -1,5 +1,4 @@
 .container{
- background-color:yellow;
  top:60px;
  height: 85vh;
  display: grid;
@@ -17,5 +16,4 @@
  grid-area: main;
  width: 100%;
  width: 100%;
- background-color: red;
 }
