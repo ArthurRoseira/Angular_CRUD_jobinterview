@@ -11,7 +11,12 @@ export class MainScreenComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.router.navigate(['list'], { relativeTo: this.route })
+    console.log(this.route.snapshot.paramMap.get('screen'));
+    if (this.route.snapshot.paramMap.get('screen') == 'list') {
+      this.router.navigate(['list'], { relativeTo: this.route })
+    } else {
+      this.router.navigate(['add'], { relativeTo: this.route })
+    }
   }
 
 }

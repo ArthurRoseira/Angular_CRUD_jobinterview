@@ -10,6 +10,7 @@ import { HomeComponent } from './views/home/home.component';
 import { MainScreenComponent } from './views/main-screen/main-screen.component';
 import { ListComponent } from './components/clients/list/list.component';
 import { AddComponent } from './components/clients/add/add.component';
+import { SidenavComponent } from './components/template/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddComponent } from './components/clients/add/add.component';
     HomeComponent,
     MainScreenComponent,
     ListComponent,
-    AddComponent
+    AddComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
