@@ -9,11 +9,13 @@
 
 .title{
  display: block;
- margin: 30px;
+ margin-top: 30px;
  width: 100%;
 }
 
-
+h1{
+ padding-left: 30px;
+}
 h1:after{
   content:'';
   display:block;

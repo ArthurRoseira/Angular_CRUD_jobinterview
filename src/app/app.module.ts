@@ -11,6 +11,8 @@ import { MainScreenComponent } from './views/main-screen/main-screen.component';
 import { ListComponent } from './components/clients/list/list.component';
 import { AddComponent } from './components/clients/add/add.component';
 import { SidenavComponent } from './components/template/sidenav/sidenav.component';
+import { DataTableComponent } from './components/data-table/data-table.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { SidenavComponent } from './components/template/sidenav/sidenav.componen
     MainScreenComponent,
     ListComponent,
     AddComponent,
-    SidenavComponent
+    SidenavComponent,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,
