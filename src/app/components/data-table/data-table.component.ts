@@ -1,3 +1,4 @@
+import { ClienteService } from './../../clientes/cliente.service';
 import { Cliente } from './../../clientes/cliente';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -18,11 +19,13 @@ export class DataTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatTable) table: MatTable<Cliente>;
   dataSource: DataTableDataSource;
 
+
+  constructor(private ClientService: ClienteService) { }
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'nomeCompleto', 'dataNascimento', 'cpf', 'addedAt', 'actions'];
 
   ngOnInit() {
-    this.dataSource = new DataTableDataSource();
+    this.dataSource = new DataTableDataSource(this.ClientService);
   }
 
   ngAfterViewInit() {
@@ -30,4 +33,12 @@ export class DataTableComponent implements AfterViewInit, OnInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
+
+  delete(id: string): void {
+    let arr: any = this.ClientService.delete(id)
+    this.ClientService.showMessage(`Cliente Deletado ${id}`)
+    this.table.dataSource = this.ClientService.read();
+  }
+
+
 }
