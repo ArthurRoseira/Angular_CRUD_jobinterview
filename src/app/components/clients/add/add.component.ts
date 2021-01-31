@@ -32,8 +32,9 @@ export class AddComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.clienteForm.value);
-    this.clienteForm.reset(new Cliente())
+    this.ClienteService.create(this.clienteForm.value)
+    this.clienteForm.reset(new Cliente());
+    this.ClienteService.showMessage('Cliente Adicionado')
   }
 
 }
