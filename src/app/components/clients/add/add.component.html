@@ -1,1 +1,42 @@
-<p>add works!</p>
+<mat-card>
+
+ <mat-card-title>
+  Novo Cliente
+ </mat-card-title>
+ <form action="">
+  <!-- Nome -->
+  <mat-form-field>
+   <input matInput placeholder='Nome Completo' name='name'>
+  </mat-form-field>
+
+  <!-- Data de Naciemento -->
+  <mat-form-field class="shortInput">
+   <mat-label>Data de Nascimento</mat-label>
+   <input matInput [matDatepicker]="dataNascimento">
+   <mat-datepicker-toggle [for]="dataNascimento" matSuffix></mat-datepicker-toggle>
+   <mat-datepicker #dataNascimento></mat-datepicker>
+  </mat-form-field>
+
+  <!-- cpf -->
+  <mat-form-field class="shortInput">
+   <input matInput placeholder='CPF' name='name'>
+  </mat-form-field>
+
+  <!-- email -->
+  <mat-form-field class="shortInput">
+   <input matInput placeholder='Email' name='name'>
+  </mat-form-field>
+
+  <!-- Telefone -->
+  <mat-form-field class="shortInput">
+   <input matInput placeholder='Telefone' name='name'>
+  </mat-form-field>
+
+ </form>
+ <button mat-raised-button color='primary'>
+  Salvar
+ </button>
+ <button mat-raised-button>
+  Cancelar
+ </button>
+</mat-card>
