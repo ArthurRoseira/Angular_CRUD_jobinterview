@@ -1,0 +1,85 @@
+<div class="container">
+ <div class="title">
+  <h1 class="mat-display-1">Fila De Clientes - Cadastro de Pré-Venda</h1>
+ </div>
+
+ <mat-card>
+
+  <mat-card-title>
+   <i class="material-icons icon-title">perm_identity</i>
+   Atualizar Cliente
+  </mat-card-title>
+  <form [formGroup]="clienteForm">
+   <!-- Nome -->
+   <mat-form-field>
+    <input matInput formControlName="nomeCompleto" placeholder='Nome Completo'>
+   </mat-form-field>
+   <span class='validation'
+    *ngIf=" clienteForm.controls.nomeCompleto.touched && clienteForm.controls.nomeCompleto.invalid">
+    <i class="material-icons" style="color:green;"
+     *ngIf=" clienteForm.controls.nomeCompleto.touched && clienteForm.controls.nomeCompleto.valid">done</i>
+    <i class="material-icons" style="color:firebrick;"
+     *ngIf=" clienteForm.controls.nomeCompleto.touched &&  clienteForm.controls.nomeCompleto.invalid">highlight_off</i>
+    Nome Completo precisa ter no minimo 4 caracteres
+   </span>
+
+   <!-- Data de Naciemento -->
+   <mat-form-field class="shortInput">
+    <mat-label>Data de Nascimento</mat-label>
+    <input matInput [matDatepicker]="dataNascimento" formControlName="dataNascimento">
+    <mat-datepicker-toggle [for]="dataNascimento" matSuffix></mat-datepicker-toggle>
+    <mat-datepicker #dataNascimento></mat-datepicker>
+   </mat-form-field>
+
+   <!-- cpf -->
+   <mat-form-field class="shortInput">
+    <input matInput placeholder='CPF' formControlName="cpf">
+   </mat-form-field>
+
+   <span class='validation' *ngIf=" clienteForm.controls.cpf.touched &&  clienteForm.controls.cpf.invalid">
+    <i class="material-icons" style="color:green;"
+     *ngIf="  clienteForm.controls.cpf.touched &&  clienteForm.controls.cpf.valid">done</i>
+    <i class="material-icons" style="color:firebrick;"
+     *ngIf="  clienteForm.controls.cpf.touched &&   clienteForm.controls.cpf.invalid">highlight_off</i>
+    CPF precisa ter no minimo 11 caracteres
+   </span>
+
+
+   <!-- email -->
+   <mat-form-field class="shortInput">
+    <input matInput placeholder='Email' formControlName="email">
+   </mat-form-field>
+   <span class='validation' *ngIf=" clienteForm.controls.email.touched &&  clienteForm.controls.email.invalid">
+    <i class="material-icons" style="color:green;"
+     *ngIf="  clienteForm.controls.email.touched &&  clienteForm.controls.email.valid">done</i>
+    <i class="material-icons" style="color:firebrick;"
+     *ngIf="  clienteForm.controls.email.touched &&   clienteForm.controls.email.invalid">highlight_off</i>
+    Email Invalido
+   </span>
+
+   <!-- Telefone -->
+   <mat-form-field class="shortInput">
+    <input matInput placeholder='Telefone' formControlName="telefone">
+   </mat-form-field>
+   <span class='validation' *ngIf=" clienteForm.controls.telefone.touched &&  clienteForm.controls.telefone.invalid">
+    <i class="material-icons" style="color:green;"
+     *ngIf="  clienteForm.controls.telefone.touched &&  clienteForm.controls.telefone.valid">done</i>
+    <i class="material-icons" style="color:firebrick;"
+     *ngIf="  clienteForm.controls.telefone.touched &&   clienteForm.controls.telefone.invalid">highlight_off</i>
+    Telefone Invalido
+   </span>
+
+
+  </form>
+  <button mat-raised-button (click)="onSubmit()" color='primary'>
+   Salvar
+  </button>
+  <button mat-raised-button routerLink='/clientes/list/list'>
+   Cancelar
+  </button>
+
+ </mat-card>
+
+
+
+</div>
