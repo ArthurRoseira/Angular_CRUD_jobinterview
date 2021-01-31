@@ -7,7 +7,6 @@ import { MatTable } from '@angular/material/table';
 import { DataTableDataSource } from './data-table-datasource';
 
 
-
 @Component({
   selector: 'app-data-table',
   templateUrl: './data-table.component.html',
@@ -19,6 +18,7 @@ export class DataTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatTable) table: MatTable<Cliente>;
   dataSource: DataTableDataSource;
 
+  searchNome: string = ''
 
   constructor(private ClientService: ClienteService) { }
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
@@ -40,5 +40,15 @@ export class DataTableComponent implements AfterViewInit, OnInit {
     this.table.dataSource = this.ClientService.read();
   }
 
+
+  search(): void {
+    let searchResult: Cliente[] = this.ClientService.searchByName(this.searchNome)
+    this.table.dataSource = searchResult
+  }
+
+  clear(): void {
+    this.searchNome = ''
+    this.table.dataSource = this.ClientService.read();
+  }
 
 }

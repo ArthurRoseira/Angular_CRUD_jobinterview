@@ -14,8 +14,10 @@ export class MainScreenComponent implements OnInit {
     console.log(this.route.snapshot.paramMap.get('screen'));
     if (this.route.snapshot.paramMap.get('screen') == 'list') {
       this.router.navigate(['list'], { relativeTo: this.route })
-    } else {
+    } else if (this.route.snapshot.paramMap.get('screen') == 'add') {
       this.router.navigate(['add'], { relativeTo: this.route })
+    } else {
+      this.router.navigate(['update'], { relativeTo: this.route })
     }
   }
 

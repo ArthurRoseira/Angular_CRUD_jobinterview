@@ -1,3 +1,5 @@
+import { SupportComponent } from './views/support/support.component';
+import { UpdateComponent } from './components/clients/update/update.component';
 import { AddComponent } from './components/clients/add/add.component';
 import { ListComponent } from './components/clients/list/list.component';
 import { MainScreenComponent } from './views/main-screen/main-screen.component';
@@ -15,8 +17,13 @@ const routes: Routes = [
     component: MainScreenComponent,
     children: [
       { path: 'list', component: ListComponent },
-      { path: 'add', component: AddComponent }
+      { path: 'add', component: AddComponent },
+      { path: 'update/:id', component: UpdateComponent }
     ]
+  },
+  {
+    path: "suporte",
+    component: SupportComponent
   }
 ];
 

@@ -12,8 +12,10 @@ import { ListComponent } from './components/clients/list/list.component';
 import { AddComponent } from './components/clients/add/add.component';
 import { SidenavComponent } from './components/template/sidenav/sidenav.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
-import { ReactiveFormsModule } from '@angular/forms'
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { UpdateComponent } from './components/clients/update/update.component'
+import { FormsModule } from '@angular/forms';
+import { SupportComponent } from './views/support/support.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,14 +26,17 @@ import { ReactiveFormsModule } from '@angular/forms'
     ListComponent,
     AddComponent,
     SidenavComponent,
-    DataTableComponent
+    DataTableComponent,
+    UpdateComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
