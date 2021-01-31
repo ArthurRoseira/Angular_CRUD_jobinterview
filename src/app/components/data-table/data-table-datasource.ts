@@ -1,3 +1,4 @@
+import { ClienteService } from './../../clientes/cliente.service';
 import { Cliente } from './../../clientes/cliente';
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
@@ -12,19 +13,19 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 // }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: Cliente[] = [
-  { id: 1, nomeCompleto: "caio Santos", dataNascimento: new Date("1996/01/15"), cpf: '08873958990', dataCadastro: new Date("2001/01/15"), email: "arthurroseira@gmail.com", telefone: 992119904 },
-  { id: 2, nomeCompleto: "Arthur Santos", dataNascimento: new Date("1996/01/15"), cpf: '08873958990', dataCadastro: new Date(Date.now()), email: "arthurroseira@gmail.com", telefone: 992119904 }
+// const EXAMPLE_DATA: Cliente[] = [
+//   { id: 1, nomeCompleto: "caio Santos", dataNascimento: new Date("1996/01/15"), cpf: '08873958990', dataCadastro: new Date("2001/01/15"), email: "arthurroseira@gmail.com", telefone: 992119904 },
+//   { id: 2, nomeCompleto: "Arthur Santos", dataNascimento: new Date("1996/01/15"), cpf: '08873958990', dataCadastro: new Date(Date.now()), email: "arthurroseira@gmail.com", telefone: 992119904 }
 
-];
+// ];
 
 
 export class DataTableDataSource extends DataSource<Cliente> {
-  data: Cliente[] = EXAMPLE_DATA;
+  data: Cliente[] = this.ClientService.read();
   paginator: MatPaginator;
   sort: MatSort;
 
-  constructor() {
+  constructor(private ClientService: ClienteService) {
     super();
   }
 

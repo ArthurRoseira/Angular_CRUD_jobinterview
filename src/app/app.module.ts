@@ -12,7 +12,7 @@ import { ListComponent } from './components/clients/list/list.component';
 import { AddComponent } from './components/clients/add/add.component';
 import { SidenavComponent } from './components/template/sidenav/sidenav.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
-
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { DataTableComponent } from './components/data-table/data-table.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
