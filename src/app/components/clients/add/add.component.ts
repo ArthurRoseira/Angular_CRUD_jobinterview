@@ -1,7 +1,8 @@
 import { ClienteService } from './../../../clientes/cliente.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms'
 import { Cliente } from 'src/app/clientes/cliente';
+
 
 
 @Component({
@@ -22,11 +23,11 @@ export class AddComponent implements OnInit {
   initializeForm(cliente: Cliente): void {
     this.clienteForm = this.fb.group({
       id: [this.ClienteService.clientes.length + 1],
-      nomeCompleto: [cliente.nomeCompleto],
+      nomeCompleto: [cliente.nomeCompleto, Validators.minLength(4)],
       dataNascimento: [cliente.dataNascimento],
-      cpf: [cliente.cpf],
-      email: [cliente.email],
-      telefone: [cliente.telefone],
+      cpf: [cliente.cpf, Validators.minLength(11)],
+      email: [cliente.email, [Validators.email]],
+      telefone: [cliente.telefone, Validators.minLength(11)],
       dataCadastro: [new Date(Date.now())]
     })
   }

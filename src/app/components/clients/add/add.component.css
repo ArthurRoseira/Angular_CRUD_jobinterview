@@ -1,7 +1,36 @@
+.container{
+ height: 85vh;
+ width: 100%; 
+}
+
+.title{
+ display: block;
+ margin-top: 30px;
+ width: 100%;
+}
+
+h1{
+ padding-left: 30px;
+}
+h1:after{
+  content:'';
+  display:block;
+  width: 90%; 
+  height:100%;
+  margin-right:-100%;
+  border-bottom:3px solid #000;
+}
+
+
 form{
  display: flex;
  flex-direction: column;
  max-width: 90%;
+}
+
+.icon-title{
+ vertical-align: middle;
+ font-size: 30px;
 }
 
 button{
@@ -15,10 +44,19 @@ input{
 
 mat-card{
  width: 80%;
- top: 50px;
  margin:auto;
 }
 
 .shortInput{
  max-width: 30%;
+}
+
+.validation{
+  font-size: 10px;
+  color: grey;
+}
+
+.validation > i{
+ font-size: 13px;
+ vertical-align: middle;
 }
