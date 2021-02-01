@@ -48,7 +48,8 @@ export class DataTableComponent implements AfterViewInit, OnInit {
 
   clear(): void {
     this.searchNome = ''
-    this.table.dataSource = this.ClientService.read();
+    this.dataSource.paginator = this.paginator;
+    this.table.dataSource = this.dataSource;
   }
 
 }
