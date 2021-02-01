@@ -63,7 +63,7 @@ export class ClienteService {
     var update: Cliente = this.clientes.find(c => c.id == +id)!
     var index = this.clientes.indexOf(update)
     this.clientes = this.clientes.filter(c => c.id != +id)
-    this.clientes.splice(index, 1)
+    //this.clientes.splice(index, 1)
     return this.clientes
   }
 

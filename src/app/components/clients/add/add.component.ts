@@ -21,8 +21,11 @@ export class AddComponent implements OnInit {
   }
 
   initializeForm(cliente: Cliente): void {
+
+    let maxId = Math.max.apply(Math, this.ClienteService.clientes.map(function (c) { return c.id; }))
+
     this.clienteForm = this.fb.group({
-      id: [this.ClienteService.clientes.length + 1],
+      id: [maxId + 1],
       nomeCompleto: [cliente.nomeCompleto, Validators.minLength(4)],
       dataNascimento: [cliente.dataNascimento],
       cpf: [cliente.cpf, Validators.minLength(11)],
